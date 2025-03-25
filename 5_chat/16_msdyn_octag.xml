@@ -1,0 +1,15 @@
+<entities >
+  <entity name="msdyn_octag" displayname="Tag" etc="10698" primaryidfield="msdyn_octagid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Tag" name="msdyn_octagid" type="guid" primaryKey="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+ &lt;entity name="msdyn_octag"&gt;
+   &lt;filter type="and" &gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt; 
+        &lt;/filter&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

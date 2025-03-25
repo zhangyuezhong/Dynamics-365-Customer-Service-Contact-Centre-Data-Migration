@@ -1,0 +1,10 @@
+<entities >
+  <entity name="msdyn_chatquestionnaireresponse" displayname="Survey Response" etc="11250" primaryidfield="msdyn_chatquestionnaireresponseid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Survey Response" name="msdyn_chatquestionnaireresponseid" type="guid" primaryKey="true" />
+    </fields>
+  </entity>
+</entities>

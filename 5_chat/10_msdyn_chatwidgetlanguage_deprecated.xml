@@ -1,0 +1,20 @@
+<entities >
+  <entity name="msdyn_chatwidgetlanguage" displayname="Chat Widget Language(deprecated)" etc="11124" primaryidfield="msdyn_chatwidgetlanguageid" primarynamefield="msdyn_languagename" disableplugins="false">
+    <fields>
+      <field displayname="Chat Widget Language" name="msdyn_chatwidgetlanguageid" type="guid" primaryKey="true" />
+      <field displayname="Language Name" name="msdyn_languagename" type="string" customfield="true" />
+      <field displayname="Locale ID" name="msdyn_localeid" type="number" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_chatwidgetlanguage"&gt;
+        &lt;filter type="and"&gt;
+            &lt;!-- msdyn_chatwidgetlanguage deprecated, DON NOT SELECT ANYTHING --&gt;
+            &lt;condition attribute="msdyn_languagename" operator="eq" value="0" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

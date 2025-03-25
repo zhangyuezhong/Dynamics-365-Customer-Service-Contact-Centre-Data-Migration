@@ -1,0 +1,20 @@
+<entities >
+  <entity name="msdyn_authenticationsettings" displayname="Authentication Settings" etc="10654" primaryidfield="msdyn_authenticationsettingsid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Authentication Type" name="msdyn_authenticationtype" type="optionsetvalue" customfield="true" />
+      <field displayname="Authentication Settings" name="msdyn_authenticationsettingsid" type="guid" primaryKey="true" />
+      <field displayname="JavaScript client function" name="msdyn_javascriptclientfunction" type="string" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Public key URL" name="msdyn_publickeyurl" type="string" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+    </fields>
+    <filter>&lt;fetch&gt;
+ &lt;entity name="msdyn_authenticationsettings"&gt;
+  &lt;filter type="and" &gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt; 
+        &lt;/filter&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

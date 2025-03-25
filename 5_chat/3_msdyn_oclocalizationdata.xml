@@ -1,0 +1,33 @@
+<entities >
+  <entity name="msdyn_oclocalizationdata" displayname="Localization" etc="10684" primaryidfield="msdyn_oclocalizationdataid" primarynamefield="msdyn_localizedtext" disableplugins="false" skipupdate="true">
+    <fields>
+      <field displayname="Is default" name="msdyn_isdefault" type="bool" customfield="true" />
+      <field displayname="Automated message" name="msdyn_systemmessageid" type="entityreference" lookupType="msdyn_ocsystemmessage" customfield="true" />
+      <field displayname="Default Localized Text" name="msdyn_defaultlocalizedtext" type="string" customfield="true" />
+      <field displayname="Entity Column Name" name="msdyn_entitycolumnname" type="string" customfield="true" />
+      <field displayname="Entity Name" name="msdyn_entityname" type="string" customfield="true" />
+      <field displayname="Entity Record Id" name="msdyn_entityrecordid" type="string" customfield="true" />
+      <field displayname="Language code" name="msdyn_customerlanguageid" type="entityreference" lookupType="msdyn_oclanguage" customfield="true" />
+      <field displayname="Language Code" name="msdyn_languagecode" type="number" customfield="true" />
+      <field displayname="Localization" name="msdyn_oclocalizationdataid" type="guid" primaryKey="true" />
+      <field updateCompare="true" displayname="Localized text" name="msdyn_localizedtext" type="string" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Organization Id" name="organizationid" type="entityreference" lookupType="organization" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_oclocalizationdata"&gt;
+       &lt;filter type="or"&gt;
+            &lt;condition attribute="msdyn_defaultlocalizedtext" operator="null" /&gt;
+            &lt;condition attribute="msdyn_defaultlocalizedtext" operator="eq" value="" /&gt;
+        &lt;/filter&gt;
+        &lt;link-entity name="msdyn_oclanguage" from="msdyn_oclanguageid" to="msdyn_customerlanguageid" link-type="inner" alias="lang"&gt;
+            &lt;filter&gt;
+                &lt;condition attribute="msdyn_localecode" operator="eq" value="en-AU" /&gt;
+            &lt;/filter&gt;
+        &lt;/link-entity&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

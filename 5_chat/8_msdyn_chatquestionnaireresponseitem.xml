@@ -1,0 +1,14 @@
+<entities >
+  <entity name="msdyn_chatquestionnaireresponseitem" displayname="Survey Response Value" etc="11251" primaryidfield="msdyn_chatquestionnaireresponseitemid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Survey answer option" name="msdyn_chatansweroptionid" type="entityreference" lookupType="msdyn_chatansweroption" customfield="true" />
+      <field displayname="Survey answer text" name="msdyn_chatanswertext" type="string" customfield="true" />
+      <field displayname="Survey Question Id" name="msdyn_surveyquestionid" type="entityreference" lookupType="msdyn_surveyquestion" customfield="true" />
+      <field displayname="Survey response" name="msdyn_chatquestionnaireresponseid" type="entityreference" lookupType="msdyn_chatquestionnaireresponse" customfield="true" />
+      <field displayname="Survey Response Values" name="msdyn_chatquestionnaireresponseitemid" type="guid" primaryKey="true" />
+    </fields>
+  </entity>
+</entities>

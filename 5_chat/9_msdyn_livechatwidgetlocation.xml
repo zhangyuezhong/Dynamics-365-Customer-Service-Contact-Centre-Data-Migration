@@ -1,0 +1,23 @@
+<entities >
+  <entity name="msdyn_livechatwidgetlocation" displayname="Chat Widget Location" etc="11254" primaryidfield="msdyn_livechatwidgetlocationid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Chat widget" name="msdyn_livechatconfigid" type="entityreference" lookupType="msdyn_livechatconfig" customfield="true" />
+      <field displayname="Chat Widget Location" name="msdyn_livechatwidgetlocationid" type="guid" primaryKey="true" />
+      <field displayname="Location URL Wildcard" name="msdyn_locationurlwildcard" type="string" customfield="true" />
+      <field displayname="Rule Type" name="msdyn_ruletype" type="optionsetvalue" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Title" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Value" name="msdyn_domainvalue" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_livechatwidgetlocation"&gt;
+        &lt;filter type="and"&gt;
+            &lt;!-- Check if ismanaged is equal to 0 --&gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

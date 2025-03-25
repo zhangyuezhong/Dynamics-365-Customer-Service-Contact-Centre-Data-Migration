@@ -1,0 +1,21 @@
+<entities >
+  <entity name="msdyn_oc_geolocationprovider" displayname="Geo Location Provider" etc="10699" primaryidfield="msdyn_oc_geolocationproviderid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Geo Location Provider" name="msdyn_oc_geolocationproviderid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Provider API Key Version" name="msdyn_providerapikeyversion" type="number" customfield="true" />
+      <field displayname="Provider name" name="msdyn_providername" type="optionsetvalue" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Bing Maps API key" name="msdyn_providerapikey" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_oc_geolocationprovider"&gt;
+        &lt;filter type="and"&gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

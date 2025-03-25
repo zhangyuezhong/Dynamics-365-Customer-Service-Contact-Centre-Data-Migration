@@ -1,0 +1,24 @@
+<entities >
+  <entity name="msdyn_questionsequence" displayname="Survey Question Sequence" etc="11256" primaryidfield="msdyn_questionsequenceid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Chat widget" name="msdyn_chatengagementtochatsequenceid" type="entityreference" lookupType="msdyn_livechatconfig" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Order" name="sequencenumber" type="number" />
+      <field displayname="Required" name="msdyn_questionrequired" type="bool" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Survey question name" name="msdyn_surveyquestion" type="entityreference" lookupType="msdyn_surveyquestion" customfield="true" />
+      <field displayname="Survey Question Sequence" name="msdyn_questionsequenceid" type="guid" primaryKey="true" />
+      <field displayname="Survey type" name="msdyn_chatquestionnairetype" type="optionsetvalue" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_questionsequence"&gt;
+        &lt;filter type="and"&gt;
+            &lt;!-- Check if ismanaged is equal to 0 --&gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

@@ -1,0 +1,61 @@
+<entities >
+  <entity name="msdyn_liveworkstream" displayname="Work Stream" etc="10667" primaryidfield="msdyn_liveworkstreamid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Allow Automated Messages" name="msdyn_enableautomatedmessages" type="bool" customfield="true" />
+      <field displayname="Allowed Presences" name="msdyn_allowedpresences" type="optionsetvaluecollection" customfield="true" />
+      <field displayname="Always assign to last agent" name="msdyn_alwaysassigntolastagent" type="bool" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Assign WorkItem After Decline or Timeout" name="msdyn_assignworkitemafterdecline" type="number" customfield="true" />
+      <field displayname="Auto-close after inactivity" name="msdyn_autocloseafterinactivity" type="number" customfield="true" />
+      <field displayname="Block capacity for wrap up state" name="msdyn_blockcapacityforwrapup" type="number" customfield="true" />
+      <field displayname="CallbackPreviewDialing" name="msdyn_notificationtemplate_callback_previewdialing" type="string" customfield="true" />
+      <field displayname="Consult" name="msdyn_notificationtemplate_consult" type="string" customfield="true" />
+      <field displayname="Conversation mode of chat channels" name="msdyn_conversationmode" type="optionsetvalue" customfield="true" />
+      <field displayname="Customer Disconnect Hold Duration For Open Conversation" name="msdyn_customerdisconnectholddurationforopenconversation" type="number" customfield="true" />
+      <field displayname="Capacity" name="msdyn_capacityrequired" type="number" customfield="true" />
+      <field displayname="Capacity format" name="msdyn_capacityformat" type="optionsetvalue" customfield="true" />
+      <field displayname="Channel" name="msdyn_streamsource" type="optionsetvalue" customfield="true" />
+      <field displayname="Contract Id" name="msdyn_routingcontractid" type="entityreference" lookupType="msdyn_decisioncontract" customfield="true" />
+      <field displayname="Default" name="msdyn_sessiontemplate_default" type="string" customfield="true" />
+      <field displayname="Default Queue" name="msdyn_defaultqueue" type="entityreference" lookupType="queue" customfield="true" />
+      <field displayname="Direction" name="msdyn_direction" type="optionsetvalue" customfield="true" />
+      <field displayname="Enable selecting from push-based work streams" name="msdyn_enableselectingfrompushbasedworkstreams" type="bool" customfield="true" />
+      <field displayname="Entity" name="msdyn_masterentityroutingconfigurationid" type="entityreference" lookupType="msdyn_masterentityroutingconfiguration" customfield="true" />
+      <field displayname="FallBack Language" name="msdyn_fallbacklanguage" type="string" customfield="true" />
+      <field displayname="Follow-up after waiting" name="msdyn_followupafterwaiting" type="number" customfield="true" />
+      <field displayname="Handling Time Threshold" name="msdyn_handlingtimethreshold" type="number" customfield="true" />
+      <field displayname="Incoming authenticated" name="msdyn_notificationtemplate_incoming_auth" type="string" customfield="true" />
+      <field displayname="Incoming unauthenticated" name="msdyn_notificationtemplate_incoming_unauth" type="string" customfield="true" />
+      <field displayname="Is Default" name="msdyn_isdefault" type="bool" customfield="true" />
+      <field displayname="Keep same agent for entire conversation" name="msdyn_enableagentaffinity" type="bool" customfield="true" />
+      <field displayname="Matching Logic" name="msdyn_matchinglogic" type="optionsetvalue" customfield="true" />
+      <field displayname="Max Concurrency" name="msdyn_maxconcurrentconnection" type="number" customfield="true" />
+      <field displayname="Mode" name="msdyn_mode" type="optionsetvalue" customfield="true" />
+      <field displayname="Notification" name="msdyn_notification" type="optionsetvalue" customfield="true" />
+      <field displayname="notification scenario placeholder" name="msdyn_notificationscenarioplaceholder" type="string" customfield="true" />
+      <field displayname="Outbound queue" name="msdyn_outboundqueueid" type="entityreference" lookupType="queue" customfield="true" />
+      <field displayname="Record Identification Rule" name="msdyn_recordidentificationrule" type="string" customfield="true" />
+      <field displayname="Record Identification Validation Rule" name="msdyn_recordidentificationvalidationrule" type="string" customfield="true" />
+      <field displayname="Restrict download of recording" name="msdyn_restrictdownloadrecording" type="bool" customfield="true" />
+      <field displayname="Restrict download of transcript" name="msdyn_restrictdownloadtranscript" type="bool" customfield="true" />
+      <field displayname="Screen pop timeout" name="msdyn_screenpoptimeout" type="number" customfield="true" />
+      <field displayname="Screen pop timeout" name="msdyn_screenpoptimeout_optionSet" type="optionsetvalue" customfield="true" />
+      <field displayname="Skill Attachment Rules Count" name="msdyn_skillattachmentrulescount" type="number" customfield="true" />
+      <field displayname="Skill Attachment Rules Count (Last Updated On)" name="msdyn_skillattachmentrulescount_date" type="datetime" customfield="true" />
+      <field displayname="Skill Attachment Rules Count (State)" name="msdyn_skillattachmentrulescount_state" type="number" customfield="true" />
+      <field displayname="SupervisorAssign" name="msdyn_notificationtemplate_supervisorassign" type="string" customfield="true" />
+      <field displayname="Transfer" name="msdyn_notificationtemplate_transfer" type="string" customfield="true" />
+      <field displayname="Waiting Time Threshold" name="msdyn_waitingtimethreshold" type="number" customfield="true" />
+      <field displayname="Work Distribution Mode" name="msdyn_workdistributionmode" type="optionsetvalue" customfield="true" />
+      <field displayname="Work Stream" name="msdyn_liveworkstreamid" type="guid" primaryKey="true" />
+    </fields>
+    <filter>&lt;fetch distinct="true"&gt;
+ &lt;entity name="msdyn_liveworkstream"&gt;
+  &lt;filter type="and"&gt;
+   &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt; 
+   &lt;condition attribute="msdyn_mode" operator="eq" value="717210001" /&gt;  &lt;!-- Simplified --&gt;
+  &lt;/filter&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt; </filter>
+  </entity>
+</entities>

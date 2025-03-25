@@ -1,0 +1,25 @@
+<entities >
+  <entity name="msdyn_ocvoicechannellanguagesetting" displayname="Voice Channel Language Setting" etc="11279" primaryidfield="msdyn_ocvoicechannellanguagesettingid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Hold music" name="msdyn_holdmusicid" type="entityreference" lookupType="msdyn_ocphonemusic" customfield="true" />
+      <field displayname="Is Primary" name="msdyn_isprimary" type="bool" customfield="true" />
+      <field displayname="Language" name="msdyn_languageid" type="entityreference" lookupType="msdyn_oclanguage" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="survey bot systemuser" name="msdyn_surveybotsystemuserid" type="entityreference" lookupType="systemuser" customfield="true" />
+      <field displayname="Voice" name="msdyn_ocvoiceid" type="entityreference" lookupType="msdyn_ocvoice" customfield="true" />
+      <field displayname="Voice Channel Language Setting" name="msdyn_ocvoicechannellanguagesettingid" type="guid" primaryKey="true" />
+      <field displayname="voice channel setting" name="msdyn_ocvoicechannelsettingid" type="entityreference" lookupType="msdyn_ocvoicechannelsetting" customfield="true" />
+      <field displayname="Wait music" name="msdyn_waitmusicid" type="entityreference" lookupType="msdyn_ocphonemusic" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_ocvoicechannellanguagesetting"&gt;
+        &lt;filter type="and"&gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

@@ -1,0 +1,17 @@
+<entities >
+  <entity name="msdyn_liveworkstreamcapacityprofile" displayname="Work stream capacity profile" etc="10730" primaryidfield="msdyn_liveworkstreamcapacityprofileid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Work stream Capacity profile" name="msdyn_liveworkstreamcapacityprofileid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Capacity Profile" name="msdyn_capacityprofile_id" type="entityreference" lookupType="msdyn_capacityprofile" customfield="true" />
+      <field displayname="Work Stream" name="msdyn_workstream_id" type="entityreference" lookupType="msdyn_liveworkstream" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+ &lt;entity name="msdyn_liveworkstreamcapacityprofile"&gt;
+   &lt;filter type="and" &gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt; 
+        &lt;/filter&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

@@ -1,0 +1,17 @@
+<entities >
+  <entity name="msdyn_decisioncontract" displayname="Decision contract" etc="10599" primaryidfield="msdyn_decisioncontractid" primarynamefield="msdyn_name" disableplugins="false" skipupdate="false">
+    <fields>
+      <field displayname="Contract definition" name="msdyn_contractdefinition" type="string" customfield="true" />
+      <field displayname="Decision contract" name="msdyn_decisioncontractid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Unique name" name="msdyn_uniquename" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch distinct="true"&gt;
+ &lt;entity name="msdyn_decisioncontract"&gt;
+  &lt;filter type="and"&gt;
+   &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+  &lt;/filter&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

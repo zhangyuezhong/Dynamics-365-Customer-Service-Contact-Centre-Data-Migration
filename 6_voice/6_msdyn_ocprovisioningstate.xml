@@ -1,0 +1,16 @@
+<entities >
+  <entity name="msdyn_ocprovisioningstate" displayname="Provisioning State" etc="10650" primaryidfield="msdyn_ocprovisioningstateid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="voicechannelsettingsid" name="msdyn_voicechannelsettingid" type="entityreference" lookupType="msdyn_ocvoicechannelsetting" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_ocprovisioningstate"&gt;
+        &lt;filter type="and"&gt;
+   &lt;condition attribute="msdyn_voicechannelsettingid" operator="not-null" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

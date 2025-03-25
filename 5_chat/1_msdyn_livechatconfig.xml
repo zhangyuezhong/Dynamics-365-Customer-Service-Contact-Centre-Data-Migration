@@ -1,0 +1,71 @@
+<entities >
+  <entity name="msdyn_livechatconfig" displayname="Chat Widget" etc="11252" primaryidfield="msdyn_livechatconfigid" primarynamefield="msdyn_name" disableplugins="true">
+    <fields>
+      <field displayname="Email Template" name="msdyn_emailtemplate" type="string" customfield="true" />
+      <field displayname="Enable" name="msdyn_postconversationsurveyenable" type="bool" customfield="true" />
+      <field displayname="Enable Co-browse" name="msdyn_enablecobrowse" type="bool" customfield="true" />
+      <field displayname="Enable file attachments for agents" name="msdyn_enablefileattachmentsforagents" type="bool" customfield="true" />
+      <field displayname="Enable file attachments for customers" name="msdyn_enablefileattachmentsforcustomers" type="bool" customfield="true" />
+      <field displayname="Enable Screen sharing" name="msdyn_enablescreensharing" type="bool" customfield="true" />
+      <field displayname="Indicates the conversation mode of the chat widget" name="msdyn_conversationmode" type="optionsetvalue" customfield="true" />
+      <field displayname="Indicates whether display of wait time is enabled" name="msdyn_averagewaittime_enabled" type="bool" customfield="true" />
+      <field displayname="infolabel" name="msdyn_infolabel" type="string" customfield="true" />
+      <field displayname="Language" name="msdyn_widgetlocale" type="entityreference" lookupType="msdyn_chatwidgetlanguage" customfield="true" />
+      <field displayname="Language" name="msdyn_ocwidgetlanguage" type="entityreference" lookupType="msdyn_oclanguage" customfield="true" />
+      <field displayname="Language" name="msdyn_language" type="optionsetvalue" customfield="true" />
+      <field displayname="Logo" name="msdyn_avatarurl" type="string" customfield="true" />
+      <field displayname="Message" name="msdyn_postconversationsurveymessagetext" type="string" customfield="true" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Offline Widegt Title" name="msdyn_offlinewidgettitle" type="string" customfield="true" />
+      <field displayname="Offline Widget Subtitle" name="msdyn_offlinewidgetsubtitle" type="string" customfield="true" />
+      <field displayname="Offline Widget Theme Color" name="msdyn_offlinewidgetthemecolor" type="optionsetvalue" customfield="true" />
+      <field displayname="Operating hours" name="msdyn_operatinghourid" type="entityreference" lookupType="msdyn_operatinghour" customfield="true" />
+      <field displayname="Portal URL" name="msdyn_portalurl" type="string" customfield="true" />
+      <field displayname="Position" name="msdyn_widgetposition" type="optionsetvalue" customfield="true" />
+      <field displayname="Post-chat Survey" name="msdyn_postchatenabled" type="bool" customfield="true" />
+      <field displayname="Pre-Chat Survey" name="msdyn_prechatenabled" type="bool" customfield="true" />
+      <field displayname="Proactive-chat" name="msdyn_proactivechatenabled" type="bool" customfield="true" />
+      <field displayname="Provider API key" name="msdyn_oc_geolocationprovider" type="entityreference" lookupType="msdyn_oc_geolocationprovider" customfield="true" />
+      <field displayname="Question Set for Authenticated Users" name="msdyn_prechatquestionnaireauthenticated" type="entityreference" lookupType="msdyn_questionsequence" customfield="true" />
+      <field displayname="Question Set for Unauthenticated Users" name="msdyn_prechatquestionnaireunauthenticated" type="entityreference" lookupType="msdyn_questionsequence" customfield="true" />
+      <field displayname="Reconnect to previous agent for" name="msdyn_timetoreconnectwithpreviousagent" type="number" customfield="true" />
+      <field displayname="Redirection URL" name="msdyn_redirectionurl" type="string" customfield="true" />
+      <field displayname="Request visitor location" name="msdyn_requestvisitorlocation" type="bool" customfield="true" />
+      <field displayname="Screen sharing provider" name="msdyn_screensharingprovider" type="string" customfield="true" />
+      <field displayname="Sender Mailbox" name="msdyn_mailbox" type="string" customfield="true" />
+      <field displayname="Show position in queue" name="msdyn_positioninqueue_enabled" type="bool" customfield="true" />
+      <field displayname="Show widget during offline hours" name="msdyn_showwidgetduringofflinehours" type="bool" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Subtitle" name="msdyn_widgetsubtitle" type="string" customfield="true" />
+      <field displayname="Survey" name="msdyn_postconversationsurvey" type="entityreference" lookupType="msfp_survey" customfield="true" />
+      <field displayname="Survey Mode" name="msdyn_postconversationsurveymode" type="optionsetvalue" customfield="true" />
+      <field displayname="Theme Color" name="msdyn_widgetthemecolor" type="optionsetvalue" customfield="true" />
+      <field displayname="Title" name="msdyn_widgettitle" type="string" customfield="true" />
+      <field displayname="Turn on reconnect to previous chat" name="msdyn_enablechatreconnect" type="bool" customfield="true" />
+      <field displayname="Turn on sound notifications" name="msdyn_widgetsoundnotification" type="bool" customfield="true" />
+      <field displayname="Turn on unread messages indicator" name="msdyn_widgetvisualnotification" type="bool" customfield="true" />
+      <field displayname="Work stream" name="msdyn_liveworkstreamid" type="entityreference" lookupType="msdyn_liveworkstream" customfield="true" />
+      <field displayname="(Deprecated) During non-operating hours" name="msdyn_duringnonoperatinghours" type="string" customfield="true" />
+      <field displayname="Agent display name" name="msdyn_agentdisplayname" type="optionsetvalue" customfield="true" />
+      <field displayname="Allow download of transcript" name="msdyn_enablechattranscriptdownload" type="bool" customfield="true" />
+      <field displayname="Allow email of transcript" name="msdyn_enablechattranscriptemail" type="bool" customfield="true" />
+      <field displayname="Anonymize Agent" name="msdyn_showagentname" type="bool" customfield="true" />
+      <field displayname="Authentication settings" name="msdyn_authsettingsid" type="entityreference" lookupType="msdyn_authenticationsettings" customfield="true" />
+      <field displayname="Auto Detect Language" name="msdyn_autodetectlanguage" type="bool" customfield="true" />
+      <field displayname="Bot Survey" name="msdyn_postconversationsurveybotsurvey" type="bool" customfield="true" />
+      <field displayname="Calling options" name="msdyn_callingoptions" type="optionsetvalue" customfield="true" />
+      <field displayname="Chat Widget" name="msdyn_livechatconfigid" type="guid" primaryKey="true" />
+      <field displayname="Co-browse provider" name="msdyn_cobrowseprovider" type="string" customfield="true" />
+      <field displayname="Display Generic Name" name="msdyn_genericagentdisplayname" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+ &lt;entity name="msdyn_livechatconfig"&gt;
+  &lt;filter type="and" &gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt; 
+        &lt;/filter&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

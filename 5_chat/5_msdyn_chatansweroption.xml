@@ -1,0 +1,20 @@
+<entities >
+  <entity name="msdyn_chatansweroption" displayname="Survey Answer Option" etc="11249" primaryidfield="msdyn_chatansweroptionid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Survey Answer Option" name="msdyn_chatansweroptionid" type="guid" primaryKey="true" />
+      <field displayname="Survey question" name="msdyn_answeroptionsid" type="entityreference" lookupType="msdyn_surveyquestion" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_chatansweroption"&gt;
+        &lt;filter type="and"&gt;
+            &lt;!-- Check if ismanaged is equal to 0 --&gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

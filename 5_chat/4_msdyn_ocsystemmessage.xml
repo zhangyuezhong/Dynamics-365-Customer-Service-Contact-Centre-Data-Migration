@@ -1,0 +1,29 @@
+<entities >
+  <entity name="msdyn_ocsystemmessage" displayname="Message" etc="10697" primaryidfield="msdyn_ocsystemmessageid" primarynamefield="msdyn_name" disableplugins="false" skipupdate="true">
+    <fields>
+      <field displayname="Channel" name="msdyn_streamsource" type="optionsetvalue" customfield="true" />
+      <field displayname="Default language" name="msdyn_defaultlanguage" type="entityreference" lookupType="msdyn_oclanguage" customfield="true" />
+      <field displayname="Instance ID" name="msdyn_instanceid" type="string" customfield="true" />
+      <field displayname="Message" name="msdyn_ocsystemmessageid" type="guid" primaryKey="true" />
+      <field displayname="Message description" name="msdyn_messagedescription" type="string" customfield="true" />
+      <field displayname="Message recipient" name="msdyn_messagereceiver" type="optionsetvalue" customfield="true" />
+      <field displayname="Message template trigger" name="msdyn_messagetemplatetrigger" type="optionsetvalue" customfield="true" />
+      <field updateCompare="true" displayname="Message Text" name="msdyn_messagetext" type="string" customfield="true" />
+      <field displayname="Message trigger" name="msdyn_systemmessageeventtype" type="optionsetvalue" customfield="true" />
+      <field updateCompare="true" displayname="Message type" name="msdyn_messagetype" type="optionsetvalue" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Organization Id" name="organizationid" type="entityreference" lookupType="organization" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Widget" name="msdyn_widgetid" type="entityreference" lookupType="msdyn_livechatconfig" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_ocsystemmessage"&gt;
+        &lt;filter&gt;
+            &lt;!-- Ensure msdyn_messagetype is greater than 0 --&gt;
+            &lt;condition attribute="msdyn_messagetype" operator="gt" value="0" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

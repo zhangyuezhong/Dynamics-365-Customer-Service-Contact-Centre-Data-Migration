@@ -1,0 +1,30 @@
+<entities >
+  <entity name="queue" displayname="Queue" etc="2020" primaryidfield="queueid" primarynamefield="name" disableplugins="false" skipupdate="false">
+    <fields>
+      <field displayname="Assignment Strategy" name="msdyn_assignmentstrategy" type="optionsetvalue" customfield="true" />
+      <field displayname="Description" name="description" type="string" />
+      <field displayname="Is Default Queue" name="msdyn_isdefaultqueue" type="bool" customfield="true" />
+      <field displayname="Is Omnichannel queue" name="msdyn_isomnichannelqueue" type="bool" customfield="true" />
+      <field displayname="Name" name="name" type="string" />
+      <field displayname="Priority" name="msdyn_priority" type="number" customfield="true" />
+      <field displayname="Queue" name="queueid" type="guid" primaryKey="true" />
+      <field displayname="Type" name="queueviewtype" type="optionsetvalue" />
+      <field displayname="Operating Hours" name="msdyn_operatinghourid" type="entityreference" lookupType="msdyn_operatinghour" customfield="true" />
+      <field displayname="Prequeue Overflow Ruleset" name="msdyn_prequeueoverflowrulesetid" type="entityreference" lookupType="msdyn_decisionruleset" customfield="true" />
+      <field displayname="Assignment Input Contract Id" name="msdyn_assignmentinputcontractid" type="entityreference" lookupType="msdyn_decisioncontract" customfield="true" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Status" name="statecode" type="state" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="queue"&gt;
+        &lt;filter type="and"&gt;
+            &lt;condition attribute="msdyn_isomnichannelqueue" operator="eq" value="1" /&gt;
+            &lt;condition attribute="msdyn_isdefaultqueue" operator="eq" value="0" /&gt;
+            &lt;condition attribute="msdyn_queuetype" operator="eq" value="192350002" /&gt;
+            &lt;!-- Voice (192350002), Messaging (192350000), Entity (192350001) --&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

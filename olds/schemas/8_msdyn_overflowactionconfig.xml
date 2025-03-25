@@ -1,0 +1,19 @@
+<entities >
+  <entity name="msdyn_overflowactionconfig" displayname="Overflow Action Config" etc="10641" primaryidfield="msdyn_overflowactionconfigid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Overflow Action Config" name="msdyn_overflowactionconfigid" type="guid" primaryKey="true" />
+      <field displayname="Overflow Action Data" name="msdyn_overflowactiondata" type="string" customfield="true" />
+      <field displayname="Overflow Action Type" name="msdyn_overflowactiontype" type="optionsetvalue" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+    </fields>
+    <filter>&lt;fetch&gt;
+ &lt;entity name="msdyn_overflowactionconfig"&gt;
+  &lt;filter&gt; 
+   &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt; 
+  &lt;/filter&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

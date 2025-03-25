@@ -1,0 +1,15 @@
+<fetch>
+    <entity name="msdyn_oclocalizationdata">
+       <filter type="or">
+            <!-- Ensure msdyn_DefaultLocalizedText is null -->
+            <condition attribute="msdyn_defaultlocalizedtext" operator="null" />
+            <!-- Ensure msdyn_DefaultLocalizedText is empty -->
+            <condition attribute="msdyn_defaultlocalizedtext" operator="eq" value="" />
+        </filter>
+        <link-entity name="msdyn_oclanguage" from="msdyn_oclanguageid" to="msdyn_customerlanguageid" link-type="inner" alias="lang">
+            <filter>
+                <condition attribute="msdyn_localecode" operator="eq" value="en-AU" />
+            </filter>
+        </link-entity>
+    </entity>
+</fetch>

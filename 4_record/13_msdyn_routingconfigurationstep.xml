@@ -1,0 +1,20 @@
+<entities >
+  <entity name="msdyn_routingconfigurationstep" displayname="Routing configuration step" etc="10646" primaryidfield="msdyn_routingconfigurationstepid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Routing configuration step" name="msdyn_routingconfigurationstepid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Routing configuration" name="msdyn_routingconfigurationid" type="entityreference" lookupType="msdyn_routingconfiguration" customfield="true" />
+      <field displayname="Rule set" name="msdyn_rulesetid" type="entityreference" lookupType="msdyn_decisionruleset" customfield="true" />
+      <field displayname="Step order" name="msdyn_steporder" type="number" customfield="true" />
+      <field displayname="Step type" name="msdyn_type" type="optionsetvalue" customfield="true" />
+      <field displayname="Unique name" name="msdyn_uniquename" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+ &lt;entity name="msdyn_routingconfigurationstep"&gt;
+   &lt;filter type="and" &gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt; 
+        &lt;/filter&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

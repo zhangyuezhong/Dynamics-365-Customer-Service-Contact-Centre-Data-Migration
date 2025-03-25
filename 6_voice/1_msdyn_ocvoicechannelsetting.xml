@@ -1,0 +1,42 @@
+<entities >
+  <entity name="msdyn_ocvoicechannelsetting" displayname="Voice Channel Setting" etc="11280" primaryidfield="msdyn_ocvoicechannelsettingid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Announce average wait time" name="msdyn_announceaveragewaittime" type="bool" customfield="true" />
+      <field displayname="Announce position in queue" name="msdyn_announcepositioninqueue" type="bool" customfield="true" />
+      <field displayname="Enable agent control of the recording" name="msdyn_agentrecordingcontrolsenabled" type="bool" customfield="true" />
+      <field displayname="Enable agent control of the transcription" name="msdyn_agenttranscriptioncontrolsenabled" type="bool" customfield="true" />
+      <field displayname="Enable agent control to add an external participant" name="msdyn_agentexternalparticipantcontrolenabled" type="bool" customfield="true" />
+      <field displayname="Enable agent control to add an external participant on Teams" name="msdyn_agentexternalteamsparticipantcontrolenabled" type="bool" customfield="true" />
+      <field displayname="Enable agent external participant transfer control for external Microsoft Teams users" name="msdyn_agentexternalteamsparticipanttransfercontrolenabled" type="bool" customfield="true" />
+      <field displayname="Enable agent external participant transfer control for external phone numbers" name="msdyn_agentexternalparticipanttransfercontrolenabled" type="bool" customfield="true" />
+      <field displayname="Enable bridged transfer for Microsoft Teams" name="msdyn_usebridgetransferforteamstransfer" type="bool" customfield="true" />
+      <field displayname="Enable bridged transfer for public switched telephony network" name="msdyn_usebridgetransferforpstntransfer" type="bool" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Operating Hours" name="msdyn_operatinghoursid" type="entityreference" lookupType="msdyn_operatinghour" customfield="true" />
+      <field displayname="Recording Enabled" name="msdyn_recordingenabled" type="bool" customfield="true" />
+      <field displayname="Recording mode" name="msdyn_recordingmode" type="optionsetvaluecollection" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Transcription Enabled" name="msdyn_transcriptionenabled" type="bool" customfield="true" />
+      <field displayname="Transcription mode" name="msdyn_transcriptionmode" type="optionsetvaluecollection" customfield="true" />
+      <field displayname="Voice Channel Setting" name="msdyn_ocvoicechannelsettingid" type="guid" primaryKey="true" />
+      <field displayname="Work Stream" name="msdyn_liveworkstreamid" type="entityreference" lookupType="msdyn_liveworkstream" customfield="true" />
+      <field displayname="Stop transcription and recording after Microsoft Teams transfer" name="msdyn_stoptranscriptionandrecordingafterteamstransfer" type="bool" customfield="true" />
+      <field displayname="Stop transcription and recording after public switched telephone network transfer" name="msdyn_stoptranscriptionandrecordingafterpstntransfer" type="bool" customfield="true" />
+      <field displayname="Show transcription by default" name="msdyn_transcriptionshowbydefault" type="bool" customfield="true" />
+      <field displayname="Show/Hide transcription feature (preview)" name="msdyn_showhidetranscriptionfeaturepreview" type="bool" customfield="true" />
+      <field displayname="Skip wait music for workstream IVR" name="msdyn_skipwaitmusicforivr" type="bool" customfield="true" />
+      <field displayname="Outbound Call Region Allowlist" name="msdyn_outboundcallregionallowlist" type="string" customfield="true" />
+      <field displayname="Anonymous Caller ID" name="msdyn_isanonymouscallerid" type="bool" customfield="true" />
+      <field displayname="Caller ID Name" name="msdyn_calleridname" type="string" customfield="true" />
+      <field displayname="Inbound URL" name="msdyn_inboundurl" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_ocvoicechannelsetting"&gt;
+        &lt;filter type="and"&gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

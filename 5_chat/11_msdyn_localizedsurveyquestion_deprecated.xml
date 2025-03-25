@@ -1,0 +1,22 @@
+<entities >
+  <entity name="msdyn_localizedsurveyquestion" displayname="Localized Survey Question (Deprecated)" etc="11255" primaryidfield="msdyn_localizedsurveyquestionid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Description" name="msdyn_description" type="string" customfield="true" />
+      <field displayname="Language Code" name="msdyn_languagecode" type="optionsetvalue" customfield="true" />
+      <field displayname="Localized Question Text" name="msdyn_localizedquestiontext" type="string" customfield="true" />
+      <field displayname="Localized Survey Question" name="msdyn_localizedsurveyquestionid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Survey Question" name="msdyn_surveyquestionid" type="entityreference" lookupType="msdyn_surveyquestion" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_localizedsurveyquestion"&gt;
+        &lt;filter type="and"&gt;
+            &lt;!-- msdyn_localizedsurveyquestion deprecated, DON NOT SELECT ANYTHING --&gt;
+            &lt;condition attribute="msdyn_localizedquestiontext" operator="eq" value="0" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

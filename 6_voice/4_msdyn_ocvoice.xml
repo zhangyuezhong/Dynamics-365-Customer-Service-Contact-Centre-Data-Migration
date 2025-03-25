@@ -1,0 +1,23 @@
+<entities >
+  <entity name="msdyn_ocvoice" displayname="Voice" etc="11278" primaryidfield="msdyn_ocvoiceid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Language" name="msdyn_languageid" type="entityreference" lookupType="msdyn_oclanguage" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="pitch" name="msdyn_pitch" type="number" customfield="true" />
+      <field displayname="speaking speed" name="msdyn_speakingspeed" type="number" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="voice" name="msdyn_ocvoiceid" type="guid" primaryKey="true" />
+      <field displayname="voice name" name="msdyn_voicename" type="string" customfield="true" />
+      <field displayname="voice style" name="msdyn_voicestyle" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+    &lt;entity name="msdyn_ocvoice"&gt;
+        &lt;filter type="and"&gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+        &lt;/filter&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

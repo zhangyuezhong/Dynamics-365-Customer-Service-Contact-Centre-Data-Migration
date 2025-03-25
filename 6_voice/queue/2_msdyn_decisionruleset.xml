@@ -1,0 +1,49 @@
+<entities >
+  <entity name="msdyn_decisionruleset" displayname="Decision rule set" etc="10600" primaryidfield="msdyn_decisionrulesetid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Is input collection" name="msdyn_isinputcollection" type="bool" customfield="true" />
+      <field displayname="ML model type" name="msdyn_mlmodeltype" type="optionsetvalue" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Output contract" name="msdyn_outputcontractid" type="entityreference" lookupType="msdyn_decisioncontract" customfield="true" />
+      <field displayname="Rule set definition" name="msdyn_rulesetdefinition" type="string" customfield="true" />
+      <field displayname="Rule set type" name="msdyn_rulesettype" type="optionsetvalue" customfield="true" />
+      <field displayname="Unique name" name="msdyn_uniquename" type="string" customfield="true" />
+      <field displayname="FetchXML for ruleset" name="msdyn_fetchxml" type="string" customfield="true" />
+      <field displayname="AI builder model" name="msdyn_aibmodelid" type="entityreference" lookupType="msdyn_aimodel" customfield="true" />
+      <field displayname="Authoring mode" name="msdyn_authoringmode" type="optionsetvalue" customfield="true" />
+      <field displayname="Decision rule set" name="msdyn_decisionrulesetid" type="guid" primaryKey="true" />
+      <field displayname="Description" name="msdyn_description" type="string" customfield="true" />
+      <field displayname="Input contract" name="msdyn_inputcontractid" type="entityreference" lookupType="msdyn_decisioncontract" customfield="true" />
+    </fields>
+    <filter>&lt;fetch distinct="true"&gt;
+    &lt;entity name="msdyn_decisionruleset"&gt;
+        &lt;filter&gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+        &lt;/filter&gt;
+        &lt;link-entity name="msdyn_assignmentconfigurationstep" from="msdyn_rulesetid" to="msdyn_decisionrulesetid" link-type="inner" alias="am"&gt;
+            &lt;filter&gt;
+                &lt;condition attribute="msdyn_type" operator="ne" value="192350001" /&gt;
+                &lt;!-- Assignment Configuration Step Type:
+                     - Prioritization (192350000)
+                     - Assignment Rule Selection (192350001)
+                     - Assignment (192350002) --&gt;
+            &lt;/filter&gt;
+            &lt;link-entity name="msdyn_assignmentconfiguration" from="msdyn_assignmentconfigurationid" to="msdyn_assignmentconfigurationid" link-type="inner" alias="an"&gt;
+                &lt;link-entity name="queue" from="queueid" to="msdyn_queueid" link-type="inner" alias="ao"&gt;
+                    &lt;filter type="and"&gt;
+                        &lt;condition attribute="msdyn_isomnichannelqueue" operator="eq" value="1" /&gt;
+                        &lt;condition attribute="msdyn_isdefaultqueue" operator="eq" value="0" /&gt;
+                        &lt;condition attribute="msdyn_queuetype" operator="eq" value="192350002" /&gt;
+                        &lt;!-- Queue Type:
+                             - Messaging (192350000)
+                             - Entity (192350001)
+                             - Voice (192350002) --&gt;
+                    &lt;/filter&gt;
+                &lt;/link-entity&gt;
+            &lt;/link-entity&gt;
+        &lt;/link-entity&gt;
+    &lt;/entity&gt;
+&lt;/fetch&gt;
+</filter>
+  </entity>
+</entities>

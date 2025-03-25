@@ -1,0 +1,53 @@
+<entities >
+  <entity name="msdyn_notificationfield" displayname="Notification Field" etc="10412" primaryidfield="msdyn_notificationfieldid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Notification Field" name="msdyn_notificationfieldid" type="guid" primaryKey="true" />
+      <field displayname="Order" name="msdyn_order" type="number" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Title" name="msdyn_title" type="string" customfield="true" />
+      <field displayname="Unique Name" name="msdyn_uniquename" type="string" customfield="true" />
+      <field displayname="Value" name="msdyn_value" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch distinct="true"&gt;
+  &lt;entity name="msdyn_notificationfield"&gt;
+    &lt;filter type="and"&gt;
+      &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+    &lt;/filter&gt;
+  &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+  <entity name="msdyn_notificationtemplate" displayname="Notification Template" etc="10413" primaryidfield="msdyn_notificationtemplateid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Accept Button Text" name="msdyn_acceptbuttontext" type="string" customfield="true" />
+      <field displayname="Auto Accept Notification" name="msdyn_autoacceptnotification" type="bool" customfield="true" />
+      <field displayname="Auto popup session" name="msdyn_autopopupsession" type="bool" customfield="true" />
+      <field displayname="Countdown (seconds)" name="msdyn_timeout" type="number" customfield="true" />
+      <field displayname="Description" name="msdyn_description" type="string" customfield="true" />
+      <field displayname="Icon" name="msdyn_icon" type="string" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Notification Template" name="msdyn_notificationtemplateid" type="guid" primaryKey="true" />
+      <field displayname="Reject Button Text" name="msdyn_rejectbuttontext" type="string" customfield="true" />
+      <field displayname="Show countdown" name="msdyn_showtimeout" type="bool" customfield="true" />
+      <field displayname="Show Desktop Notifications" name="msdyn_desktopnotificationmode" type="optionsetvalue" customfield="true" />
+      <field displayname="Show Reject Button" name="msdyn_showrejectbutton" type="bool" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Theme" name="msdyn_theme" type="optionsetvalue" customfield="true" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="Title" name="msdyn_title" type="string" customfield="true" />
+      <field displayname="Unique Name" name="msdyn_uniquename" type="string" customfield="true" />
+    </fields>
+    <relationships>
+      <relationship name="msdyn_notificationtemplate_notificationfield" manyToMany="true" isreflexive="false" relatedEntityName="msdyn_notificationtemplate_notificationfield" m2mTargetEntity="msdyn_notificationfield" m2mTargetEntityPrimaryKey="msdyn_notificationfieldid" />
+    </relationships>
+    <filter>&lt;fetch distinct="true"&gt;
+  &lt;entity name="msdyn_notificationtemplate"&gt;
+    &lt;filter type="and"&gt;
+      &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+    &lt;/filter&gt;
+  &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

@@ -1,0 +1,49 @@
+<entities >
+  <entity name="msdyn_decisioncontract" displayname="Decision contract" etc="10599" primaryidfield="msdyn_decisioncontractid" primarynamefield="msdyn_name" disableplugins="false" skipupdate="false">
+    <fields>
+      <field displayname="Contract definition" name="msdyn_contractdefinition" type="string" customfield="true" />
+      <field displayname="Decision contract" name="msdyn_decisioncontractid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Unique name" name="msdyn_uniquename" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch distinct="true"&gt;
+ &lt;entity name="msdyn_decisioncontract"&gt;
+  &lt;filter type="or"&gt;
+   &lt;filter type="and"&gt;
+    &lt;condition attribute="msdyn_isomnichannelqueue"  entityname="aw"  operator="eq" value="1" /&gt;
+    &lt;condition attribute="msdyn_isdefaultqueue"  entityname="aw"  operator="eq" value="0" /&gt;
+    &lt;condition attribute="msdyn_queuetype"  entityname="aw"  operator="eq" value="192350002" /&gt;
+    &lt;!-- Voice (192350002), Messaging (192350000), Entity (192350001) --&gt;
+   &lt;/filter&gt;
+   &lt;filter type="and"&gt;
+    &lt;condition attribute="msdyn_isomnichannelqueue"  entityname="be"  operator="eq" value="1" /&gt;
+    &lt;condition attribute="msdyn_isdefaultqueue"  entityname="be"  operator="eq" value="0" /&gt;
+    &lt;condition attribute="msdyn_queuetype"  entityname="be"  operator="eq" value="192350002" /&gt;
+    &lt;!-- Voice (192350002), Messaging (192350000), Entity (192350001) --&gt;
+   &lt;/filter&gt;
+   &lt;filter type="and"&gt;
+   &lt;condition attribute="msdyn_isomnichannelqueue"  entityname="bm"  operator="eq" value="1" /&gt;
+    &lt;condition attribute="msdyn_isdefaultqueue"  entityname="bm"  operator="eq" value="0" /&gt;
+    &lt;condition attribute="msdyn_queuetype"  entityname="bm"  operator="eq" value="192350002" /&gt;
+    &lt;!-- Voice (192350002), Messaging (192350000), Entity (192350001) --&gt;
+   &lt;/filter&gt;
+  &lt;/filter&gt;
+  &lt;link-entity name="queue" from="msdyn_assignmentinputcontractid" to="msdyn_decisioncontractid" link-type="outer" alias="aw"&gt;&lt;/link-entity&gt;
+  &lt;link-entity name="msdyn_decisionruleset" from="msdyn_inputcontractid" to="msdyn_decisioncontractid" link-type="outer" alias="bb"&gt;
+   &lt;link-entity name="msdyn_assignmentconfigurationstep" from="msdyn_rulesetid" to="msdyn_decisionrulesetid" link-type="outer" alias="bc"&gt;
+    &lt;link-entity name="msdyn_assignmentconfiguration" from="msdyn_assignmentconfigurationid" to="msdyn_assignmentconfigurationid" link-type="outer" alias="bd"&gt;
+     &lt;link-entity name="queue" from="queueid" to="msdyn_queueid" link-type="outer" alias="be"&gt;&lt;/link-entity&gt;
+    &lt;/link-entity&gt;
+   &lt;/link-entity&gt;
+  &lt;/link-entity&gt;
+  &lt;link-entity name="msdyn_decisionruleset" from="msdyn_outputcontractid" to="msdyn_decisioncontractid" link-type="outer" alias="bj"&gt;
+   &lt;link-entity name="msdyn_assignmentconfigurationstep" from="msdyn_rulesetid" to="msdyn_decisionrulesetid" link-type="outer" alias="bk"&gt;
+    &lt;link-entity name="msdyn_assignmentconfiguration" from="msdyn_assignmentconfigurationid" to="msdyn_assignmentconfigurationid" link-type="outer" alias="bl"&gt;
+     &lt;link-entity name="queue" from="queueid" to="msdyn_queueid" link-type="outer" alias="bm"&gt;&lt;/link-entity&gt;
+    &lt;/link-entity&gt;
+   &lt;/link-entity&gt;
+  &lt;/link-entity&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

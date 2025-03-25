@@ -1,0 +1,22 @@
+<entities >
+  <entity name="msdyn_masterentityroutingconfiguration" displayname="Master Entity Routing Configuration" etc="10636" primaryidfield="msdyn_masterentityroutingconfigurationid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Entity" name="msdyn_entitylogicalname" type="string" customfield="true" />
+      <field displayname="Master Entity Routing Configuration" name="msdyn_masterentityroutingconfigurationid" type="guid" primaryKey="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Rule set" name="msdyn_rulesetid" type="entityreference" lookupType="msdyn_decisionruleset" customfield="true" />
+      <field displayname="Unique Name" name="msdyn_uniquename" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+ &lt;entity name="msdyn_masterentityroutingconfiguration"&gt;
+  &lt;filter type="and"&gt;
+ &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt; 
+   &lt;filter type="or"&gt;
+    &lt;condition attribute="msdyn_entitylogicalname" operator="eq" value="incident" /&gt;
+    &lt;condition attribute="msdyn_entitylogicalname" operator="eq" value="msdyn_ocvoicemail" /&gt;
+   &lt;/filter&gt;
+  &lt;/filter&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt;</filter>
+  </entity>
+</entities>

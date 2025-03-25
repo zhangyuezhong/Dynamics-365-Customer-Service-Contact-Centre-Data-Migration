@@ -1,0 +1,25 @@
+<entities >
+  <entity name="msdyn_assignmentconfiguration" displayname="Assignment Configuration" etc="10638" primaryidfield="msdyn_assignmentconfigurationid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Assignment Configuration" name="msdyn_assignmentconfigurationid" type="guid" primaryKey="true" />
+      <field displayname="Description" name="msdyn_description" type="string" customfield="true" />
+      <field displayname="Is Active Configuration" name="msdyn_isactiveconfiguration" type="bool" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Queue" name="msdyn_queueid" type="entityreference" lookupType="queue" customfield="true" />
+      <field displayname="Unique Name" name="msdyn_uniquename" type="string" customfield="true" />
+    </fields>
+    <filter>&lt;fetch distinct="true"&gt;
+ &lt;entity name="msdyn_assignmentconfiguration"&gt;
+  &lt;filter&gt;
+   &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt;
+  &lt;/filter&gt;
+  &lt;link-entity name="queue" from="queueid" to="msdyn_queueid" link-type="inner" alias="bi"&gt;
+   &lt;filter type="and"&gt;
+    &lt;condition attribute="msdyn_isomnichannelqueue" operator="eq" value="1"/&gt;
+    &lt;condition attribute="msdyn_isdefaultqueue" operator="eq" value="0" /&gt;
+   &lt;/filter&gt;
+  &lt;/link-entity&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt; </filter>
+  </entity>
+</entities>

@@ -1,0 +1,18 @@
+<entities >
+  <entity name="msdyn_routingconfiguration" displayname="Routing configuration" etc="10645" primaryidfield="msdyn_routingconfigurationid" primarynamefield="msdyn_name" disableplugins="false">
+    <fields>
+      <field displayname="Is active configuration" name="msdyn_isactiveconfiguration" type="bool" customfield="true" />
+      <field displayname="Name" name="msdyn_name" type="string" customfield="true" />
+      <field displayname="Routing configuration" name="msdyn_routingconfigurationid" type="guid" primaryKey="true" />
+      <field displayname="Unique name" name="msdyn_uniquename" type="string" customfield="true" />
+      <field displayname="Work stream" name="msdyn_liveworkstreamid" type="entityreference" lookupType="msdyn_liveworkstream" customfield="true" />
+    </fields>
+    <filter>&lt;fetch&gt;
+ &lt;entity name="msdyn_routingconfiguration"&gt;
+  &lt;filter type="and" &gt;
+            &lt;condition attribute="ismanaged" operator="eq" value="0" /&gt; 
+        &lt;/filter&gt;
+ &lt;/entity&gt;
+&lt;/fetch&gt; </filter>
+  </entity>
+</entities>
